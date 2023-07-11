@@ -15,10 +15,31 @@
         </style>
         <link href="style/style.css" rel="stylesheet">
 
+<!--        <script src="src/Sample.ts"></script>-->
 
     </head>
     <body>
-        <div id="app"></div>
-        <script src="src/Sample.ts"></script>
+    <main class="prompt-generator">
+        <div class="prompt-list">
+            <section class="user-setting-area">
+                <div class="upload-prompt">
+                    <label class="upload-prompt">プロンプトをアップロード</label>
+                    <label for="upload-prompt"></label><input type="text" id="upload-prompt">
+                    <button class="btn-common green"> アップロード </button>
+                </div>
+                <div class="toggle-nsfw">
+                    <button class="btn-common blue"> 全年齢 </button>
+                    <button class="btn-common green" style="display: none;"> R-15 </button>
+                    <button class="btn-common pink" style="display: none;"> R-18 </button>
+                </div>
+            </section>
+        </div>
+    </main>
+        <div id="app">
+            <script src="src/Sample.js"></script>
+        </div>
+
+    <script src="src/Sample2.js"></script>
+
     </body>
 </html>
