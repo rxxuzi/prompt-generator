@@ -10,6 +10,7 @@ div1.className = "prompt-list-genre";
 
 const deleteButton = document.createElement("button");
 deleteButton.textContent = "Delete";
+deleteButton.id = "delete-button";
 deleteButton.addEventListener("click", function() {
     aiTextPrompt.textContent = "";
 });
@@ -31,6 +32,7 @@ for (let  i = 0 ; i < 10 ; i ++ ){
     btn.addEventListener("click", function() {
         // ボタンのtextContentをtxt要素に追記
         aiTextPrompt.textContent += text.textContent + " ";
+        console.log(aiTextPrompt.textContent);
     });
 
     btn.textContent = "Submit";
@@ -39,7 +41,5 @@ for (let  i = 0 ; i < 10 ; i ++ ){
     div2.appendChild(btn);
     div2.appendChild(br);
 }
-
-
 
 document.body.appendChild(div0);
