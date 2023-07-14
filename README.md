@@ -1,3 +1,3 @@
 # PROMPT GENERATOR
 
-## 確認ページ：[index](https://rxxuzi.github.io/prompt-generator)
+## 確認ページ：[index](https://rxxuzi.github.io/prompt-generator/)
