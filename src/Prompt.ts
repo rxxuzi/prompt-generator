@@ -1,16 +1,35 @@
-//load json file
-//parse json
-//get all the data
-//get all the data from the json
+//read json file with ajax
+import * as $ from 'jquery';
 
-import { readFileSync } from "fs";
+//read json file with ajax
+export function readJsonFile(url: string) {
+    return $.getJSON(url);
+}
 
-const file = readFileSync("./prompt.json", );
-const data = JSON.parse(file.toString());
-const prompt = data.prompt;
-const answers = data.answers;
-const choices = data.choices;
-const correct = data.correct;
+let json = readJsonFile('./prompt.json');
+console.log(json);
 
-console.log(prompt);
-console.log("hello");
+let arr = jsonToStringArray(json);
+//json to  string array
+export function jsonToStringArray(json: any) {
+    let arr: string[] = [];
+    for (let i = 0; i < json.length; i++) {
+        arr.push(json[i].prompt);
+    }
+    return arr;
+    //console.log(arr);
+}
+
+//array for each
+let main = document.createElement("div");
+main.setAttribute("id", "main");
+document.body.appendChild(main);
+
+arr.forEach(function (value) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "prompt");
+    div.innerHTML = value;
+    main.appendChild(div);
+});
+
+document.body.appendChild(main);

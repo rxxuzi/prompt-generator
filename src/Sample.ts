@@ -1,28 +1,45 @@
-class Student {
+const aiTextPrompt = document.createElement("h2");
+aiTextPrompt.id = "text-prompt";
 
-    fullName: string;
-    constructor(
-        public firstName: string,
-        public middleInitial: string,
-        public lastName: string
-    ) {
-        this.fullName = firstName + " " + middleInitial + " " + lastName;
-    }
+const div0 = document.createElement("div");
+
+div0.className = "prompt-list";
+div0.appendChild(aiTextPrompt);
+const div1 = document.createElement("div");
+div1.className = "prompt-list-genre";
+
+const deleteButton = document.createElement("button");
+deleteButton.textContent = "Delete";
+deleteButton.id = "delete-button";
+deleteButton.addEventListener("click", function() {
+    aiTextPrompt.textContent = "";
+});
+
+div0.appendChild(div1);
+const div2 = document.createElement("div");
+div2.className = "description";
+div2.id = "div2";
+
+div1.appendChild(div2);
+
+
+for (let  i = 0 ; i < 10 ; i ++ ){
+    const text = document.createElement("label");
+    text.textContent = `${i} : Content`;
+    const btn = document.createElement("button");
+
+    // ボタンがクリックされた時のイベントリスナーを追加
+    btn.addEventListener("click", function() {
+        // ボタンのtextContentをtxt要素に追記
+        aiTextPrompt.textContent += text.textContent + " ";
+        console.log(aiTextPrompt.textContent);
+    });
+
+    btn.textContent = "Submit";
+    div2.appendChild(text);
+    const br = document.createElement("br");
+    div2.appendChild(btn);
+    div2.appendChild(br);
 }
 
-interface Person {
-    firstName: string;
-    lastName: string;
-}
-
-function greeter(person: Person) {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
-
-let uesr : Person = new Student("Jane", "M.", "User");
-
-
-// document.body.textContent = greeter("1999" );
-const H1 = document.createElement("h1");
-H1.textContent = "Hello World!";
-document.body.appendChild(H1);
+document.body.appendChild(div0);
